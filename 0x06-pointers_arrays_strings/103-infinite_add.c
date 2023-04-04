@@ -10,23 +10,23 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-int a = strlen(n1);
-int b = strlen(n2);
+int a = 0;
+int b = 0;
 int carry = 0;
 int i = size_r - 1;
+while (n1[a] != '\0')
+	a++;
+while (n2[b] != '\0')
+	b++;
 while ((a > 0 || b > 0 || carry > 0) && i > 0)
 {
 	char acc = carry;
 
 	if (a > 0)
-	{
 		acc += *(n1 + a - 1) - 48;
-	}
 
 	if (b > 0)
-	{
 		acc += *(n2 + b - 1) - 48;
-	}
 
 	if (acc >= 10)
 	{
