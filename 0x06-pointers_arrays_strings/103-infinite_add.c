@@ -1,9 +1,12 @@
 #include "stdlib.h"
 #include "stdio.h"
 /**
- * rot13 - encodes a string in rot13
- * @s: string to be encoded
- * Return: the resulting strring
+ * infinite_add - adds two strings
+ * @n1: the first string
+ * @n2: the first string
+ * @r: where to store the result
+ * @size_r: the size of r
+ * Return: the resulting string
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
@@ -37,7 +40,6 @@ while ((a > 0 || b > 0 || carry > 0) && i > 0)
 	i -= 1;
 	a -= 1;
 	b -= 1;
-    
 }
 
 if (i > 0 || (a <= 0 && b <= 0 && carry == 0))
