@@ -34,7 +34,6 @@ while ((a > 0 || b > 0 || carry > 0) && i > 0)
 		carry = 0;
 	}
 	*(r + i - 1) = acc + 48;
-    printf("%c %c = %c carry %d \n",*(n1 + a -1), *(n2 +b -1 ),acc+48, carry);
 	i -= 1;
 	a -= 1;
 	b -= 1;
