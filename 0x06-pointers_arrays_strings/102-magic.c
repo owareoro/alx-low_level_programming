@@ -16,9 +16,7 @@ int main(void)
    * - only one statement
    * - you are not allowed to code anything else than this line of code
    */
-  printf("%p\n", (void*)p);
-  printf("%p\n", (void*)&a[1]);
-  printf("%d\n", p[-3]);
+  p[-3] = 98;
   /* ...so that this prints 98\n */
   printf("a[2] = %d\n", a[2]);
   return (0);
