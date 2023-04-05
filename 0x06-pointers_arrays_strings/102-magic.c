@@ -17,8 +17,8 @@ int main(void)
    * - you are not allowed to code anything else than this line of code
    */
   printf("%p\n", (void*)p);
-  printf("%p\n", (void*)&a[2]);
-  printf("%p\n", ((void*)(p - 5 + 2)));
+  printf("%p\n", (void*)&a);
+  printf("%p\n", ((void*)(&a - 1)));
   /* ...so that this prints 98\n */
   printf("a[2] = %d\n", a[2]);
   return (0);
