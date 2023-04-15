@@ -24,20 +24,20 @@ int _strlen(char *string)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;
-	int num, len, i, j;
+	int times, len, i, j;
 
-	num = n;
+	times = n;
 
-	if (s1 == NULL) /* account for NULL strings */
-		s1 = "";
+	if (times < 0)
+		return (NULL);
 	if (s2 == NULL)
 		s2 = "";
-	if (num < 0) /* account for negative n bytes */
-		return (NULL);
-	if (num >= _strlen(s2)) /* account for n too big */
-		num = _strlen(s2);
+	if (s1 == NULL) /* account for NULL strings */
+		s1 = "";
+	if (times >= _strlen(s2)) /* account for n too big */
+		times = _strlen(s2);
 
-	len = _strlen(s1) + num + 1; /* +1 to account for null pointer */
+	len = _strlen(s1) + times + 1; /* +1 to account for null pointer */
 
 	ptr = malloc(sizeof(*ptr) * len); /* malloc and check for error */
 	if (ptr == NULL)
@@ -45,7 +45,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	for (i = 0; s1[i] != '\0'; i++) /* concat */
 		ptr[i] = s1[i];
-	for (j = 0; j < num; j++)
+	for (j = 0; j < times; j++)
 		ptr[i + j] = s2[j];
 	ptr[i + j] = '\0';
 
